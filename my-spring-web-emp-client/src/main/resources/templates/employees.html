@@ -1,0 +1,21 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employees</title>
+</head>
+<body>
+<h1>Employees</h1>
+    <div th:if="${employees.empty}">
+        <div>No employees found</div>
+    </div>
+    <div th:each="emp: ${employees}">
+        <p>
+            <span th:text="${emp.firstName}"></span>
+            <span th:text="${emp.lastName}"></span>
+            <span th:text="${emp.designation}"></span>
+            <span th:text="${emp.empNo}"></span>
+        </p>
+    </div>
+</body>
+</html>
